@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion;
 
 public class PortalTraveller : MonoBehaviour {
 
@@ -10,9 +11,21 @@ public class PortalTraveller : MonoBehaviour {
     public Material[] originalMaterials { get; set; }
     public Material[] cloneMaterials { get; set; }
 
-    public virtual void Teleport (Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot) {
+    public float yaw;
+    float smoothYaw;
+    Vector3 velocity;
+
+    public void Teleport (Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot) {
+        // transform.position = pos;
+        //transform.rotation = rot;
         transform.position = pos;
-        transform.rotation = rot;
+        Vector3 eulerRot = rot.eulerAngles;
+        float delta = Mathf.DeltaAngle(smoothYaw, eulerRot.y);
+        yaw += delta;
+        smoothYaw += delta;
+        transform.eulerAngles = Vector3.up * smoothYaw;
+        velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(velocity));
+        Physics.SyncTransforms();
     }
 
     // Called when first touches portal
