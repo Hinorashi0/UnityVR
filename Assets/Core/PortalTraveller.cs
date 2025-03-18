@@ -25,11 +25,11 @@ public class PortalTraveller : MonoBehaviour {
         smoothYaw += delta;
         transform.eulerAngles = Vector3.up * smoothYaw;
         velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(velocity));
-        Physics.SyncTransforms();
+        //Physics.SyncTransforms();
     }
 
     // Called when first touches portal
-    public virtual void EnterPortalThreshold () {
+   /* public virtual void EnterPortalThreshold () {
         if (graphicsClone == null) {
             graphicsClone = Instantiate (graphicsObject);
             graphicsClone.transform.parent = graphicsObject.transform.parent;
@@ -39,16 +39,16 @@ public class PortalTraveller : MonoBehaviour {
         } else {
             graphicsClone.SetActive (true);
         }
-    }
+    }*/
 
     // Called once no longer touching portal (excluding when teleporting)
-    public virtual void ExitPortalThreshold () {
+    /*public virtual void ExitPortalThreshold () {
         graphicsClone.SetActive (false);
         // Disable slicing
         for (int i = 0; i < originalMaterials.Length; i++) {
             originalMaterials[i].SetVector ("sliceNormal", Vector3.zero);
         }
-    }
+    }*/
 
     public void SetSliceOffsetDst (float dst, bool clone) {
         for (int i = 0; i < originalMaterials.Length; i++) {
