@@ -234,7 +234,7 @@ public class Portal : MonoBehaviour {
         }
 
         // Apply parameters
-        for (int i = 0; i < traveller.originalMaterials.Length; i++) {
+       /* for (int i = 0; i < traveller.originalMaterials.Length; i++) {
             traveller.originalMaterials[i].SetVector ("sliceCentre", slicePos);
             traveller.originalMaterials[i].SetVector ("sliceNormal", sliceNormal);
             traveller.originalMaterials[i].SetFloat ("sliceOffsetDst", sliceOffsetDst);
@@ -243,7 +243,7 @@ public class Portal : MonoBehaviour {
             traveller.cloneMaterials[i].SetVector ("sliceNormal", cloneSliceNormal);
             traveller.cloneMaterials[i].SetFloat ("sliceOffsetDst", cloneSliceOffsetDst);
 
-        }
+        }*/
 
     }
 
