@@ -205,7 +205,7 @@ public class Portal : MonoBehaviour {
         Transform screenT = screen.transform;
         bool camFacingSameDirAsPortal = Vector3.Dot (transform.forward, transform.position - viewPoint) > 0;
         screenT.localScale = new Vector3 (screenT.localScale.x, screenT.localScale.y, screenThickness);
-       //screenT.localPosition = Vector3.forward * screenThickness * ((camFacingSameDirAsPortal) ? 0.5f : -0.5f);
+        screenT.localPosition = Vector3.forward * screenThickness * ((camFacingSameDirAsPortal) ? 0.5f : -0.5f);
         return screenThickness;
     }
 
@@ -250,8 +250,6 @@ public class Portal : MonoBehaviour {
     // Use custom projection matrix to align portal camera's near clip plane with the surface of the portal
     // Note that this affects precision of the depth buffer, which can cause issues with effects like screenspace AO
     void SetNearClipPlane () {
-        // Learning resource:
-        // http://www.terathon.com/lengyel/Lengyel-Oblique.pdf
         Transform clipPlane = transform;
         int dot = System.Math.Sign (Vector3.Dot (clipPlane.forward, transform.position - portalCam.transform.position));
 
