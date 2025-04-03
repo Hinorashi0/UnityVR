@@ -22,6 +22,9 @@ public class XRLever : XRBaseInteractable
     [Range(-90f, 90.0f)]
     float MinAngle = -90.0f;
 
+    [SerializeField]
+    bool isDoor;
+
     public UnityEvent OnLeverActivate = new UnityEvent();
     public UnityEvent OnLeverDeactivate = new UnityEvent();
 
@@ -85,7 +88,7 @@ public class XRLever : XRBaseInteractable
         else
             lookAngle = Mathf.Clamp(lookAngle, MaxAngle, MinAngle);
 
-        float maxAngleDistance = Mathf.Abs(MaxAngle -lookAngle);
+        float maxAngleDistance = Mathf.Abs(MaxAngle - lookAngle);
         float minAngleDistance = Mathf.Abs(MinAngle - lookAngle);
 
         bool newValue = (maxAngleDistance < minAngleDistance);
@@ -117,6 +120,14 @@ public class XRLever : XRBaseInteractable
 
     void SetHandleAngle(float angle)
     {
-        Handle.localRotation = Quaternion.Euler(angle, 0.0f, 0.0f);
+        
+        if(isDoor == true)
+        {
+            Handle.localRotation = Quaternion.Euler(0.0f, angle, 0.0f);
+        }
+        else
+        {
+            Handle.localRotation = Quaternion.Euler(angle, 0.0f, 0.0f);
+        }
     }
 }
