@@ -4,7 +4,7 @@ using UnityEngine;
 public class TerrainTerraform : MonoBehaviour
 {
     [SerializeField] LayerMask terrainLayer;
-    [SerializeField] Camera cam;
+    [SerializeField] GameObject shovel;
 
     [SerializeField] float rayLength;
     [SerializeField] float miningRange;
@@ -26,7 +26,19 @@ public class TerrainTerraform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(shovel.transform.position, shovel.transform.TransformDirection(Vector3.up), out hit, Mathf.Infinity, terrainLayer))
+
+        {
+            Debug.DrawRay(shovel.transform.position, shovel.transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow);
+            Debug.Log("Did Hit");
+        }
+        else
+        {
+            Debug.DrawRay(shovel.transform.position, shovel.transform.TransformDirection(Vector3.up) * 1000, Color.white);
+            Debug.Log("Did not Hit");
+        }
     }
 
 
