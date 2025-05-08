@@ -28,16 +28,11 @@ public class TerrainTerraform : MonoBehaviour
     {
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(shovel.transform.position, shovel.transform.TransformDirection(Vector3.up), out hit, Mathf.Infinity, terrainLayer))
+        if (Physics.Raycast(shovel.transform.position, shovel.transform.TransformDirection(Vector3.up), out hit, 1.25f, terrainLayer))
         {
-            TerraformTerrain(hit.point, -0.3f, .5f);
-            Debug.DrawRay(shovel.transform.position, shovel.transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
-        }
-        else
-        {
-            Debug.DrawRay(shovel.transform.position, shovel.transform.TransformDirection(Vector3.up) * 1000, Color.white);
-            Debug.Log("Did not Hit");
+            TerraformTerrain(hit.point, -0.001f, .5f);
+            Debug.DrawRay(shovel.transform.position, shovel.transform.TransformDirection(Vector3.up) * 1, Color.yellow);
+            //Debug.Log("Did Hit");
         }
     }
 
