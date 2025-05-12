@@ -190,6 +190,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1373826212}
   m_SourcePrefab: {fileID: 100100000, guid: 96a265b47bcf2fc4196a977f49079150, type: 3}
+--- !u!54 &27783828 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7356478432885323444, guid: fb0bb6aa82de7c2438cda583de15578e, type: 3}
+  m_PrefabInstance: {fileID: 592300677}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &47213522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5255,6 +5260,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 801118643}
+    - target: {fileID: 7356478432885323444, guid: fb0bb6aa82de7c2438cda583de15578e, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6484,6 +6493,67 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &808497555
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -36.274784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.0326283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.359149
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114383534648166993, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961769210357640265, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_Name
+      value: Potion_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961769210357640265, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
+      propertyPath: m_TagString
+      value: Potion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44e723b3d5b0e8c478e3b502b94369d5, type: 3}
 --- !u!4 &817758196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4731548797671380, guid: 37bf6b4eaddee8d448771b63238e03d1, type: 3}
@@ -7364,6 +7434,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2018452158288121593, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018452158288121593, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27783828}
+    - target: {fileID: 2018452158288121593, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_freezeRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018452158288121593, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.Rigidbody, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018452158288121593, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3356625897440324829, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
       propertyPath: m_Name
       value: KeySocket
@@ -7436,6 +7526,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4544521809461549562, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1612
+      objectReference: {fileID: 0}
     - target: {fileID: 4900912311053478502, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.41
@@ -7451,6 +7545,14 @@ PrefabInstance:
     - target: {fileID: 5025938912656416459, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602475127484159379, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 27783828}
+    - target: {fileID: 5602475127484159379, guid: 4aa89b95211656440858106bc78a3acc, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_freezeRotation
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15222,3 +15324,4 @@ SceneRoots:
   - {fileID: 649985043}
   - {fileID: 1291133288}
   - {fileID: 1268538188}
+  - {fileID: 808497555}
