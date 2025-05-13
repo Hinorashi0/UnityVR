@@ -17,4 +17,14 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void WinScene()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
